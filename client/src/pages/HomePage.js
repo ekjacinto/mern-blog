@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Post from "../Post.js";
 
 export default function HomePage() {
@@ -8,5 +8,5 @@ export default function HomePage() {
       <Post />
       <Post />
     </>
-  )  
+  );
 }
