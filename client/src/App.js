@@ -1,10 +1,10 @@
-import './App.css';
+import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout.js";
 import HomePage from "./pages/HomePage.js";
 import LoginPage from "./pages/LoginPage.js";
 import RegisterPage from "./pages/RegisterPage.js";
-import { UserContextProvider } from './UserContext.js';
+import { UserContextProvider } from "./UserContext.js";
 
 function App() {
   return (

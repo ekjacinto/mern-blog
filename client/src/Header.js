@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from './UserContext';
+import { UserContext } from "./UserContext";
 
 export default function Header() {
-  const {userInfo, setUserInfo} = useContext(UserContext);
+  const { userInfo, setUserInfo } = useContext(UserContext);
 
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
@@ -19,7 +19,7 @@ export default function Header() {
     fetch("http://localhost:4000/logout", {
       credentials: "include",
       method: "POST",
-    })
+    });
     setUserInfo(null);
   }
 
@@ -27,7 +27,9 @@ export default function Header() {
 
   return (
     <header>
-      <Link to="/" className="logo">MyBlog</Link>
+      <Link to="/" className="logo">
+        MyBlog
+      </Link>
       <nav>
         {username && (
           <>
@@ -43,5 +45,5 @@ export default function Header() {
         )}
       </nav>
     </header>
-  )
+  );
 }
