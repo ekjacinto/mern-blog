@@ -44,21 +44,21 @@ export default function CreatePost() {
     data.set("title", title);
     data.set("summary", summary);
     data.set("content", content);
-    data.set("file", files[0])
+    data.set("file", files[0]);
     e.preventDefault();
     const response = await fetch("http://localhost:4000/post", {
       method: "POST",
       body: data,
     });
-    if(response.ok) {
+    if (response.ok) {
       setRedirect(true);
     }
   }
-  
-  if(redirect) {
-    return <Navigate to={"/"} />
+
+  if (redirect) {
+    return <Navigate to={"/"} />;
   }
-  
+
   return (
     <form onSubmit={createNewPost}>
       <input
@@ -75,9 +75,11 @@ export default function CreatePost() {
         onChange={(e) => setSummary(e.target.value)}
       />
 
-      <input 
-        type="file" 
-        onChange={(e) => {setFiles(e.target.files)}}
+      <input
+        type="file"
+        onChange={(e) => {
+          setFiles(e.target.files);
+        }}
       />
 
       <ReactQuill

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Post() {
   return (
@@ -12,7 +13,7 @@ export default function Post() {
       <div className="text">
         <h2>Full-house battery backup coming later this year</h2>
         <p className="info">
-          <a className="author">Author</a>
+          <Link className="author">Author</Link>
           <time>12/18/2023 5:30</time>
         </p>
         <p className="summary">

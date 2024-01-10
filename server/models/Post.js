@@ -1,15 +1,17 @@
 const mongoose = require("mongoose");
-const {Schema, model} = mongoose;
+const { Schema, model } = mongoose;
 
-
-const PostSchema = new Schema({
-  title: String,
-  summary: String,
-  content: String,
-  cover: String, 
-}, {
-  timestemps: true,
-});
+const PostSchema = new Schema(
+  {
+    title: String,
+    summary: String,
+    content: String,
+    cover: String,
+  },
+  {
+    timestemps: true,
+  }
+);
 
 const PostModel = model("Post", PostSchema);
 
