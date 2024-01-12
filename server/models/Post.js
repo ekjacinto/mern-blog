@@ -9,7 +9,7 @@ const PostSchema = new Schema(
     cover: String,
   },
   {
-    timestemps: true,
+    timestamps: true,
   }
 );
 

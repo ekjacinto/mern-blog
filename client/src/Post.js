@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { formatISO9075 } from "date-fns";
 
-export default function Post() {
+export default function Post({ title, summary, cover, content, createdAt }) {
   return (
     <div className="post">
       <div className="image">
@@ -11,16 +12,12 @@ export default function Post() {
         />
       </div>
       <div className="text">
-        <h2>Full-house battery backup coming later this year</h2>
+        <h2>{title}</h2>
         <p className="info">
           <Link className="author">Author</Link>
-          <time>12/18/2023 5:30</time>
+          <time>{formatISO9075(new Date(createdAt))}</time>
         </p>
-        <p className="summary">
-          Today at its special launch event, home backup power giant EcoFlow
-          launched a flurry of new products, including a “Whole-Home Backup
-          Power Solution.”
-        </p>
+        <p className="summary">{summary}</p>
       </div>
     </div>
   );
