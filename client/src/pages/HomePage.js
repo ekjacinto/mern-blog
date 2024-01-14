@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Post from "../Post.js";
 
 export default function HomePage() {
-  const [posts, setPosts] = useState([]);;
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:4000/post").then((res) => {
@@ -12,11 +12,5 @@ export default function HomePage() {
     });
   }, []);
 
-  return (
-    <>
-      {posts.length > 0 && posts.map((post) => (
-        <Post {...post} />
-      ))}
-    </>
-  );
+  return <>{posts.length > 0 && posts.map((post) => <Post {...post} />)}</>;
 }
