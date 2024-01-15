@@ -3,7 +3,7 @@ import { Navigate, useParams } from "react-router-dom";
 import Editor from "../Editor";
 
 export default function EditPost() {
-  const {id} = useParams();
+  const { id } = useParams();
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [content, setContent] = useState("");
@@ -11,15 +11,14 @@ export default function EditPost() {
   const [redirect, setRedirect] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
-      .then((res) => {
-        res.json().then((postInfo) => {
-          setTitle(postInfo.title);
-          setContent(postInfo.content);
-          setSummary(postInfo.summary);
-        });
+    fetch(`http://localhost:4000/post/${id}`).then((res) => {
+      res.json().then((postInfo) => {
+        setTitle(postInfo.title);
+        setContent(postInfo.content);
+        setSummary(postInfo.summary);
       });
-  }, []);
+    });
+  }, [id]);
 
   async function updatePost(e) {
     e.preventDefault();
